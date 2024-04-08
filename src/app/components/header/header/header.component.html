@@ -1,0 +1,47 @@
+
+<!-- Dekstop -->
+<div class="header wrapper-header">
+    <div class="header-nav-1">
+        <a [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome}" href="#">Meu Denguinho</a>
+    </div>
+    <nav class="nav-3">
+        <ul class="header-nav-3">
+            <li (click)="toggleOther()" class="li-basic" *ngIf="!usuariosService.isLogged()">
+                <a [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome}" [routerLink]="['/home']">Home</a>
+            </li>
+            <li (click)="toggleOther()" class="li-basic" *ngIf="!usuariosService.isLogged()">
+                <a [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome}" [routerLink]="['/sintomas']">Sintomas</a>
+            </li>
+            <li (click)="toggleOther()" class="li-basic" *ngIf="!usuariosService.isLogged()">
+                <a [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome}" [routerLink]="['/home']">Prevencao</a>
+            </li>
+            <li (click)="toggleOther()" class="li-basic" *ngIf="!usuariosService.isLogged()">
+                <a [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome}" [routerLink]="['/home']">Tratamento</a>
+            </li>
+            <li (click)="toggleOther()" class="li-basic" *ngIf="!usuariosService.isLogged()">
+                <a [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome}" [routerLink]="['/home']">Galería</a>
+            </li>
+            <li (click)="toggleOther()" class="li-basic" *ngIf="!usuariosService.isLogged()">
+                <a [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome}" [routerLink]="['/home']">Dados e estatisticas</a>
+            </li>
+            <li (click)="toggleOther()" class="li-basic" *ngIf="!usuariosService.isLogged()">
+                <a [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome}" [routerLink]="['/quiz']">Quiz</a>
+            </li>
+            <li class="li-basic" *ngIf="usuariosService.isLogged()">
+                <div class="div-redondo" (click)="toggleDropdown($event)">
+                    <i [ngClass]="{'text-light-custom': isHome}"  class="fa-regular fa-user text-dark-custom"></i>
+                    <div [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome,'home-background': isHome, 'default-background': !isHome, 'dropdown-dark': isHome, 'dropwdown-light': !isHome}"  class="dropdown-menu-custom" *ngIf="showDropdown">
+                        <a [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome}" [routerLink]="['/profile']">Profile</a>
+                        <a [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome}" (click)="onClickLogout()">Cerrar sesión</a>
+                    </div>
+                </div>
+            </li>
+            <!--<li class="li-basic" *ngIf="usuariosService.isLogged()">
+                <div class="div-redondo">
+                    <i class="fa-regular fa-user text-dark-custom"></i>
+                </div>
+                <a [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome}" (click)="onClickLogout()">Cerrar sesión</a>
+            </li>-->
+        </ul>
+    </nav>
+</div>

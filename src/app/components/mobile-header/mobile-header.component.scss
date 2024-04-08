@@ -1,0 +1,78 @@
+@media (min-width: 1024px) {
+    #my-first {
+        display: none;
+    }
+} 
+
+#my-first {
+    min-height: 80px;
+}
+
+#my-first ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80px;
+}
+
+#my-first .logotype a {
+    padding: 0 8px;
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+
+#my-first .iconProfile {
+    padding: 0 8px;
+    text-decoration: none;
+}
+
+#my-first .burger {
+    padding: 0 15px;
+    display: none;
+    cursor: pointer;
+}
+
+#my-first .burger i {
+    line-height: 60px; /* Valor directo en lugar de variable */
+}
+
+#my-first .burger {
+    display: block;
+}
+
+
+#my-first .menu {
+    display: flex;
+    align-items: center;
+}
+
+
+#my-first .menu {
+    display: none;
+
+}
+
+
+#my-first .menu.is-open {
+    display: block;
+    position: absolute;
+    top: 62px; /* Valor directo en lugar de variable */
+    
+    width: 100%;
+}
+
+
+
+#my-first .menu-item {
+    padding: 0 10px;
+    height: 60px; /* Valor directo en lugar de variable */
+    line-height: 60px; /* Valor directo en lugar de variable */
+    text-decoration: none;
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+

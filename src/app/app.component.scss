@@ -1,0 +1,20 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent; /* Fondo transparente por defecto */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color de fondo */
+    z-index: 100; /* Asegurar que el header esté por encima del contenido del main */
+    background-color: rgb(255, 255, 255,0.1);
+    color: white;
+}
+  
+.opacity-header {
+    background-color: rgb(255, 255, 255,0.6);
+}
+
+.border-bottom-blue{
+    border-bottom: 2px solid #007bff;
+    background-color: rgb(240, 240, 240,0.9);
+}

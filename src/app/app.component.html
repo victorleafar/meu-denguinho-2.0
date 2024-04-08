@@ -1,0 +1,11 @@
+<header [ngClass]="{'opacity-header' :!isHome, 'border-bottom-blue' :!isHome  }"  class="header-border">
+  <app-header></app-header>
+</header>
+<main [ngClass]="{'container':!isHome, 'wrapper-main' :!isHome }">
+  <section>
+    <router-outlet></router-outlet>
+  </section>
+</main>
+<footer>
+  <app-footer></app-footer>
+</footer>

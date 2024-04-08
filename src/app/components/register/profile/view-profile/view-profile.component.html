@@ -1,0 +1,72 @@
+
+<div class="row">
+    <div class=" col-12 col-md-12 mb-1">
+        <h1 class="mb-1">PERFIL</h1>
+        <hr class="mb-5">
+    </div>
+</div>
+
+<form [formGroup]="userForm" (ngSubmit)="submitUser()" class="container mb-5">
+    <div class="row">
+        <!-- Parte izquierda -->
+        <div class="col-md-6">
+            <div class="row">   
+                <div class="col-md-6 mb-3 display-flex-column">
+                    <label for="username" class="label-normal" required>Username</label>
+                    <input type="text" id="username" class="input-normal" formControlName="username">
+                    <p class="error" *ngIf="controlError('username', 'required')">El campo es obligatorio</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3 display-flex-column">
+                    <label for="email" class="label-normal" required>Email</label>
+                    <input type="email" id="email" class="input-normal" formControlName="email">
+                    <p class="error" *ngIf="controlError('email', 'required')">El campo es obligatorio</p>
+                </div>
+            </div>
+            <div *ngIf="isAdmin" class="row">
+                <div class="col-md-4 mb-3 display-flex-column">
+                    <label for="role" class="label-normal" required>Rol</label>
+                    <select class="input-normal" name="role" id="role" formControlName="role">
+                        <option *ngIf="isUpdate" selected>{{roleValue}}</option>
+                        <option *ngIf="roleValue!='regular'" value="XS">regular</option>
+                        <option *ngIf="roleValue!='admin'" value="XS">admin</option>
+                    </select> 
+                    <p class="error" *ngIf="controlError('role', 'required')">El campo es obligatorio</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-3 display-flex-column">
+                    <label for="telephone" class="label-normal" required>Teléfono</label>
+                    <input type="text" id="telephone" class="input-normal" formControlName="telephone">
+                    <p class="error" *ngIf="controlError('telephone', 'required')">El campo es obligatorio</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Parte derecha -->
+        <div class="col-md-6 d-flex justify-content-center align-items-center">
+            <div class="row">
+                <div class="col-md-12 mb-3 text-center">
+                    <figure class="img-figure">
+                        <img [alt]=img_name_alt id="img" formControlName="img"[src]=img_selected_src appNoImage/>
+                    </figure>
+                </div>
+                <div class="col-md-12 mb-3 text-center">
+                    <button (click)="openImageSelectorModal()" class="button-blue">Seleccionar imagen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 mb-3 d-flex justify-content-end gap-3 mt-5">
+            <button type="submit" [disabled]="!userForm.valid" class="button-submit-custom">{{ buttonName }}</button>
+            <a class="button-back-custom" (click)="back()">Atrás</a>
+            <app-delete-button *ngIf="isUpdate && deleteAllowed" [url_param]="url_param" [id]="id"></app-delete-button>
+        </div>
+    </div>
+</form>
+
+
+

@@ -1,0 +1,32 @@
+<nav  [ngClass]="{'home-background': isHome}" id="my-first">
+  <ul class="list-unstyled">
+    <li (click)="toggleOther()" class="logotype">
+      <a [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome}" href="#">AVÍSAME</a>
+    </li>
+    <li class="burger" (click)="toggleMenu()">
+      <i *ngIf="!isMenuOpen" [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome}" class="fas fa-bars"></i>
+      <span *ngIf="isMenuOpen" [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome}">Close</span>
+    </li>
+    <li class="iconProfile">
+      <div class="div-redondo" (click)="toggleDropdown($event)">
+        <i [ngClass]="{'text-light-custom': isHome}"  class="fa-regular fa-user text-dark-custom"></i>
+        <div [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome,'home-background': isHome, 'default-background': !isHome, 'dropdown-dark': isHome, 'dropwdown-light': !isHome}"  class="dropdown-menu-custom" *ngIf="showDropdown">
+          <a [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome}" [routerLink]="['/profile']">Profile</a>
+          <a [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome}" (click)="onClickLogout()">Cerrar sesión</a>
+        </div>
+      </div>
+    </li>
+    <li class="menu" [ngClass]="{'home-background': isHome}"  [class.is-open]="isMenuOpen">
+      <a *ngIf="roleValue == roleAdminKey" (click)="toggleMenu()" class="menu-item" [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome, 'default-background' : !isHome}" aria-current="page" [routerLink]="['/users']">Novedades</a>
+      <a *ngIf="usuariosService.isLogged() && roleValue == roleAdminKey" (click)="toggleMenu()" class="menu-item" [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome, 'default-background' : !isHome}" aria-current="page" [routerLink]="['/users']">Usuarios</a>
+      <a *ngIf="usuariosService.isLogged() && roleValue == roleAdminKey" (click)="toggleMenu()" class="menu-item" [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome, 'default-background' : !isHome}" aria-current="page" [routerLink]="['/companies']">Empresas</a>
+      <a *ngIf="usuariosService.isLogged() && roleValue == roleAdminKey" (click)="toggleMenu()" class="menu-item" [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome, 'default-background' : !isHome}" aria-current="page" [routerLink]="['/requests']">Peticiones</a>
+      <a *ngIf="usuariosService.isLogged() && roleValue == roleRegularKey"(click)="toggleMenu()" class="menu-item" [ngClass]="{'default-background' : !isHome}" aria-current="page" [routerLink]="['/','avisos','new']">Nuevo aviso</a>
+      <a *ngIf="usuariosService.isLogged() && roleValue == roleRegularKey" (click)="toggleMenu()" class="menu-item" [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome, 'default-background' : !isHome}" [routerLink]="['/avisos']" >Mis avisos</a>
+      <a *ngIf="!usuariosService.isLogged()" (click)="toggleMenu()" class="menu-item" [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome, 'default-background' : !isHome}" [routerLink]="['/login']">Iniciar sesión</a>
+      <a *ngIf="!usuariosService.isLogged()" (click)="toggleMenu()" class="menu-item" [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome, 'default-background' : !isHome}" [routerLink]="['/register']">Registrarse</a>
+      <a *ngIf="usuariosService.isLogged()" (click)="toggleMenu()" class="menu-item" [ngClass]="{'text-light-custom': isHome, 'text-dark-custom': !isHome, 'default-background' : !isHome}" (click)="onClickLogout()">Cerrar sesión</a>
+    </li>
+    
+  </ul>
+</nav>

@@ -1,0 +1,290 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+}
+/*
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif, Arial;
+    font-weight: 400;
+}*/
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Poppins, "Helvetica Neue", sans-serif; font-weight: 400; }
+
+@import './style-table-responsive.scss';
+
+.wrapper-main{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1440px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 150px;
+    margin-bottom: 80px;
+}
+/* Estilos fondo ********************/
+/*Solo para la home*/
+.home-background {
+    background: rgb(0, 0, 0,0.8);
+}
+/*Para el resto*/
+.default-background {
+    background: rgb(240, 240, 240);
+}
+
+
+/*Estilos submenus*******************/
+.div-redondo {
+    position: relative;
+    border-radius: 50%;
+    border: 2px solid #007bff; /* Borde de color 007bff */
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    display: flex; /* Convertimos el div en un contenedor flex */
+    justify-content: center; /* Centramos horizontalmente */
+    align-items: center; /* Centramos verticalmente */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transición suave */
+}
+
+.div-redondo:hover {
+    background-color: #f0f0f0; /* Cambio de color de fondo al pasar el mouse */
+    border-color: #0056b3; /* Cambio de color de borde al pasar el mouse */
+}
+
+.div-redondo i {
+    font-size: 1.3rem; /* Tamaño del ícono */
+    color: #007bff; /* Color de texto */
+}
+
+.dropdown-menu-custom {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: -90px;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 130px;
+    /*display: none;*/
+}
+
+.dropdown-menu-custom a {
+    display: block;
+    padding: 5px;
+    text-decoration: none; /* Quita la subrayado */
+}
+
+/*Solo para la home*/
+
+.dropdown-dark a:hover {
+    background-color: 1px solid #000;
+}
+
+.dropdown-ligh a:hover {
+    background-color: 1px solid #d0d0d0;
+}
+
+
+
+/*Estilos de texto **********************/
+h1 {
+    font-size: 25px !important;
+    line-height: 26px !important;
+}
+.small-text-custom {
+    font-size: 14px;
+
+}
+
+.underline-text-custom {
+    text-decoration: underline;
+}
+/* Estilo label y input *****************/
+ 
+.display-flex-column { /* Contenedor input*/
+    display: flex;
+    flex-direction: column;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.label-normal {
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+.input-dark {
+    padding: 7px 10px 7px 10px; /* Adjust input padding */
+    border: none;
+    border-bottom: 1px solid #555; /* Bottom line */
+    background-color: #333; /* Dark input background color */
+    color: #fff; /* Text color */
+    width: 300px; /* Make the input occupy all available width minus the button width and space between them */
+    margin-right: 10px;
+}
+.input-normal {
+    padding: 7px 10px 7px 10px; /* Ajustar el relleno del input */
+    border: none;
+    border-bottom: 1px solid #ccc; /* Línea inferior */
+    background-color: transparent; /* Color de fondo del input */
+    width: 300  px; /* Hace que el input ocupe todo el ancho disponible menos el ancho del botón y el espacio entre ellos */
+    margin-right: 10px;
+}
+
+.input-light {
+    padding: 7px 10px 7px 10px; /* Adjust input padding */
+    border: none;
+    border-bottom: 1px solid #ccc; /* Bottom line */
+    background-color: transparent; /* Light input background color */
+    width: 300px; /* Make the input occupy all available width minus the button width and space between them */
+    margin-right: 10px;
+}
+
+.large-text-input {
+    width: 100%;
+    height: 200px;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    resize: vertical;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    font-family: Arial, sans-serif; /* Opcional: cambia la fuente según tu preferencia */
+}
+
+.large-text-input:focus {
+    outline: none;
+    border-color: #80bdff; /* Cambia el color del borde al enfocar */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Agrega un efecto de sombra al enfocar */
+}
+
+/* Opcional: Estilo para el borde si hay errores */
+.large-text-input.error {
+    border-color: #dc3545;
+}
+/*Estilo botones ********************/
+.button-blue {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+    text-decoration: none;
+}
+
+.button-blue:hover {
+    background-color: #0056b3; /* Cambio de color al pasar el mouse */
+    color: #ffffff; /* Cambio de color del texto al pasar el mouse */
+}
+
+.button-blue a{
+    color: #fff;
+    text-decoration: none;
+}
+
+/** Botón submit ***********/
+.button-submit-custom {
+    padding: 10px 20px;
+    background-color: #28a745; /* Color de fondo inicial */
+    color: #fff; /* Color de texto inicial */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+.button-submit-custom:hover {
+    background-color: #218838; /* Cambio de color de fondo al pasar el mouse */
+    color: #fff; /* El color de texto se mantiene igual al pasar el mouse */
+}
+
+/** Botón crear ***********/
+.button-create-custom {
+    padding: 10px 20px;
+    background-color: #ffffff; /* Fondo blanco */
+    color: #007bff; /* Color de texto */
+    border: 2px solid #007bff; /* Borde de color 007bff */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transición suave */
+}
+
+.button-create-custom:hover {
+    background-color: #f0f0f0; /* Cambio de color de fondo al pasar el mouse */
+    color: #007bff; /* El color de texto se mantiene igual al pasar el mouse */
+    border-color: #0056b3; /* Cambio de color de borde al pasar el mouse */
+}
+
+/*Botón atras*/
+.button-back-custom {
+    padding: 10px 20px;
+    background-color: #ffffff; /* Fondo blanco */
+    color: #000; /* Color de texto negro */
+    border: 2px solid #ccc; /* Borde gris */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transición suave */
+    text-decoration: none;
+}
+
+.button-back-custom:hover {
+    background-color: #f0f0f0; /* Cambio de color de fondo al pasar el mouse */
+}
+
+/*Botón eliminar*/
+.button-delete-custom {
+    padding: 10px 20px;
+    background-color: #dc3545; /* Color de fondo rojo */
+    color: #fff; /* Color de texto blanco */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+.button-delete-custom:hover {
+    background-color: #c82333; /* Cambio de color de fondo al pasar el mouse */
+}
+
+
+/*Link a*/
+.link-list-dark {
+    text-decoration: underline;
+    color: #000000;
+}
+.link-list-normal {
+    text-decoration: underline;
+    color: #f0f0f0;
+}
+.link-list-light {
+    text-decoration: underline;
+    color: #fff;
+}
+/* color textos */
+.text-light-custom {
+    color: #ccc;
+}
+
+.text-dark-custom {
+    color: #000000;
+}
+
+
+/* Iconos**/
+
+.icon-green {
+    color: green;
+}
+
+.icon-red {
+    color: red;
+}
+
+.icon-orange {
+    color: #F24822;
+}

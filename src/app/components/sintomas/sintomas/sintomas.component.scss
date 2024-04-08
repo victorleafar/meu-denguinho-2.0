@@ -1,0 +1,54 @@
+/* Estilos para o contêiner dos sintomas */
+.symptoms-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para o título dos sintomas */
+.symptoms-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para a lista de sintomas */
+.symptoms-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Estilos para cada item de sintoma */
+.symptom-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para o título de cada sintoma */
+.symptom-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Estilos para a descrição de cada sintoma */
+.symptom-description {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Estilos para os links de registro */
+.underline-text-custom {
+    text-decoration: underline;
+    cursor: pointer;
+    color: blue;
+}
+
+.underline-text-custom:hover {
+    color: darkblue;
+}

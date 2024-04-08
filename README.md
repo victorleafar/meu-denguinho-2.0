@@ -29,5 +29,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 Rodar o server
 
 0. Abrir a pasta do projeto
-1. cd meu-denguinho-frontend
+1. cd meu-denguinho-2.0
 2. npx ng serve
